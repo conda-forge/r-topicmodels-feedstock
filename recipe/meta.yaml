@@ -15,9 +15,7 @@ source:
 
 build:
   merge_build_host: True  # [win]
-  number: 0
-  skip: true  # [win32]
-
+  number: 1000
   rpaths:
     - lib/R/lib/
     - lib/
@@ -37,13 +35,14 @@ requirements:
     - r-modeltools
     - r-slam
     - r-tm >=0.6
-
+    - gsl                        # [not win]
   run:
     - r-base
     - {{native}}gcc-libs         # [win]
     - r-modeltools
     - r-slam
     - r-tm >=0.6
+    - gsl                        # [not win]
 
 test:
   commands:
@@ -57,8 +56,7 @@ about:
     Correlated Topics Models (CTM) by David M. Blei and co-authors and the C++ code
     for fitting LDA models using Gibbs sampling by Xuan-Hieu Phan and co-authors.
   license_family: GPL2
-  license_file: '{{ environ["PREFIX"] }}/lib/R/share/licenses/GPL-2'  # [unix]
-  license_file: '{{ environ["PREFIX"] }}\R\share\licenses\GPL-2'  # [win]
+  license_file: '{{ environ["PREFIX"] }}/lib/R/share/licenses/GPL-2'
 
 extra:
   recipe-maintainers:
@@ -68,3 +66,4 @@ extra:
     - jdblischak
     - cbrueffer
     - stevierene82
+    - dpryan79
