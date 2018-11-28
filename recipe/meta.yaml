@@ -16,8 +16,6 @@ source:
 build:
   merge_build_host: True  # [win]
   number: 1000
-  skip: true  # [win32]
-
   rpaths:
     - lib/R/lib/
     - lib/
@@ -37,14 +35,14 @@ requirements:
     - r-modeltools
     - r-slam
     - r-tm >=0.6
-    - gsl
+    - gsl                        # [not win]
   run:
     - r-base
     - {{native}}gcc-libs         # [win]
     - r-modeltools
     - r-slam
     - r-tm >=0.6
-    - gsl
+    - gsl                        # [not win]
 
 test:
   commands:
