@@ -1,4 +1,4 @@
-{% set version = '0.2-7' %}
+{% set version = '0.2-8' %}
 {% set posix = 'm2-' if win else '' %}
 {% set native = 'm2w64-' if win else '' %}
 
@@ -7,29 +7,29 @@ package:
   version: {{ version|replace("-", "_") }}
 
 source:
-  fn: topicmodels_{{ version }}.tar.gz
   url:
     - {{ cran_mirror }}/src/contrib/topicmodels_{{ version }}.tar.gz
     - {{ cran_mirror }}/src/contrib/Archive/topicmodels/topicmodels_{{ version }}.tar.gz
-  sha256: cc07705c1fa3e5f2ed1d6a53d11daa52629906e9af628dad3656a5c0ef110a9b
+  sha256: 91dd48a782554803ca24d523b0639f8e576dad841b35f7c226ce1df359b9baa6
 
 build:
   merge_build_host: True  # [win]
-  number: 1001
+  number: 0
   rpaths:
     - lib/R/lib/
     - lib/
 
 requirements:
   build:
-    - {{ compiler('c') }}        # [not win]
-    - {{ compiler('cxx') }}      # [not win]
-    - {{native}}toolchain        # [win]
+    - {{ compiler('c') }}              # [not win]
+    - {{ compiler('m2w64_c') }}        # [win]
+    - {{ compiler('cxx') }}            # [not win]
+    - {{ compiler('m2w64_cxx') }}      # [win]
     - {{posix}}filesystem        # [win]
     - {{posix}}make
-    - {{posix}}sed  # [win]
-    - {{posix}}coreutils  # [win]
-
+    - {{posix}}sed               # [win]
+    - {{posix}}coreutils         # [win]
+    - {{posix}}zip               # [win]
   host:
     - r-base
     - r-modeltools
@@ -60,10 +60,26 @@ about:
 
 extra:
   recipe-maintainers:
-    - johanneskoester
-    - bgruening
-    - daler
-    - jdblischak
-    - cbrueffer
     - stevierene82
-    - dpryan79
+    - conda-forge/r
+
+# Package: topicmodels
+# Type: Package
+# Title: Topic Models
+# Version: 0.2-8
+# Authors@R: c(person("Bettina", "Grun", role = c("aut", "cre"), email = "Bettina.Gruen@jku.at", comment = c(ORCID = "0000-0001-7265-4773")), person("Kurt", "Hornik", role = "aut", comment = c(ORCID = "0000-0003-4198-9911")))
+# Description: Provides an interface to the C code for Latent Dirichlet Allocation (LDA) models and Correlated Topics Models (CTM) by David M. Blei and co-authors and the C++ code for fitting LDA models using Gibbs sampling by Xuan-Hieu Phan and co-authors.
+# Depends: R (>= 2.15.0)
+# Imports: stats4, methods, modeltools, slam, tm (>= 0.6)
+# Suggests: lasso2, lattice, lda, OAIHarvester, SnowballC, corpus.JSS.papers
+# Additional_repositories: https://datacube.wu.ac.at
+# SystemRequirements: GNU Scientific Library version >= 1.8, C++11
+# License: GPL-2
+# Encoding: UTF-8
+# LazyLoad: yes
+# NeedsCompilation: yes
+# Packaged: 2018-12-21 09:57:50 UTC; hornik
+# Author: Bettina Grun [aut, cre] (<https://orcid.org/0000-0001-7265-4773>), Kurt Hornik [aut] (<https://orcid.org/0000-0003-4198-9911>)
+# Maintainer: Bettina Grun <Bettina.Gruen@jku.at>
+# Repository: CRAN
+# Date/Publication: 2018-12-21 12:03:10 UTC
