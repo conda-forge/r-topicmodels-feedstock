@@ -1,4 +1,4 @@
-{% set version = "0.2-9" %}
+{% set version = "0.2-11" %}
 {% set posix = 'm2-' if win else '' %}
 {% set native = 'm2w64-' if win else '' %}
 
@@ -10,11 +10,11 @@ source:
   url:
     - {{ cran_mirror }}/src/contrib/topicmodels_{{ version }}.tar.gz
     - {{ cran_mirror }}/src/contrib/Archive/topicmodels/topicmodels_{{ version }}.tar.gz
-  sha256: 40770fb7de6ab6bd6e3ef6a0c777fa6db65d0322e67503c26c84ea857ac9a79c
+  sha256: 9c26b4d967be6ec26834a39f04aa92b059ea9503eb70c700e1c0a7a43637b74a
 
 build:
-  merge_build_host: True  # [win]
-  number: 1
+  merge_build_host: true  # [win]
+  number: 0
   rpaths:
     - lib/R/lib/
     - lib/
@@ -52,11 +52,10 @@ test:
 about:
   home: https://CRAN.R-project.org/package=topicmodels
   license: GPL-2
-  summary: Provides an interface to the C code for Latent Dirichlet Allocation (LDA) models and
-    Correlated Topics Models (CTM) by David M. Blei and co-authors and the C++ code
-    for fitting LDA models using Gibbs sampling by Xuan-Hieu Phan and co-authors.
+  summary: Provides an interface to the C code for Latent Dirichlet Allocation (LDA) models and Correlated Topics Models (CTM) by David M. Blei and co-authors and
+    the C++ code for fitting LDA models using Gibbs sampling by Xuan-Hieu Phan and co-authors.
   license_family: GPL2
-  license_file: '{{ environ["PREFIX"] }}/lib/R/share/licenses/GPL-2'
+  license_file: {{ environ["PREFIX"] }}/lib/R/share/licenses/GPL-2
 
 extra:
   recipe-maintainers:
