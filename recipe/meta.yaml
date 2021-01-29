@@ -51,15 +51,16 @@ test:
 
 about:
   home: https://CRAN.R-project.org/package=topicmodels
-  license: GPL-2
+  license: GPL-2.0-only
   summary: Provides an interface to the C code for Latent Dirichlet Allocation (LDA) models and Correlated Topics Models (CTM) by David M. Blei and co-authors and the C++ code for fitting LDA models using Gibbs sampling by Xuan-Hieu Phan and co-authors.
   license_family: GPL2
-  license_file: {{ environ["PREFIX"] }}/lib/R/share/licenses/GPL-2
+  license_file:
+    - {{ environ["PREFIX"] }}/lib/R/share/licenses/GPL-2
 
 extra:
   recipe-maintainers:
-    - stevierene82
     - conda-forge/r
+    - stevierene82
 
 # Package: topicmodels
 # Type: Package
