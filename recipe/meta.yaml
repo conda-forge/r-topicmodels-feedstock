@@ -11,11 +11,10 @@ source:
     - {{ cran_mirror }}/src/contrib/topicmodels_{{ version }}.tar.gz
     - {{ cran_mirror }}/src/contrib/Archive/topicmodels/topicmodels_{{ version }}.tar.gz
   sha256: acd40ff8ea973692bd9e9acf175afc5c74ccf54b93297a0a054c15caa44b5cc9
-  patches:
-    - patches/0001_cxx14_win.patch
 
 build:
   merge_build_host: true  # [win]
+  skip: true              # [win]
   number: 0
   rpaths:
     - lib/R/lib/
