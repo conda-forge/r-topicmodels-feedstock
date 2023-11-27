@@ -3,6 +3,7 @@ About r-topicmodels-feedstock
 
 Feedstock license: [BSD-3-Clause](https://github.com/conda-forge/r-topicmodels-feedstock/blob/main/LICENSE.txt)
 
+
 About r-topicmodels
 -------------------
 
@@ -11,6 +12,7 @@ Home: https://CRAN.R-project.org/package=topicmodels
 Package license: GPL-2.0-only
 
 Summary: Provides an interface to the C code for Latent Dirichlet Allocation (LDA) models and Correlated Topics Models (CTM) by David M. Blei and co-authors and the C++ code for fitting LDA models using Gibbs sampling by Xuan-Hieu Phan and co-authors.
+
 About r-topicmodels
 -------------------
 
@@ -146,7 +148,7 @@ available continuous integration services. Thanks to the awesome service provide
 [CircleCI](https://circleci.com/), [AppVeyor](https://www.appveyor.com/),
 [Drone](https://cloud.drone.io/welcome), and [TravisCI](https://travis-ci.com/)
 it is possible to build and upload installable packages to the
-[conda-forge](https://anaconda.org/conda-forge) [Anaconda-Cloud](https://anaconda.org/)
+[conda-forge](https://anaconda.org/conda-forge) [anaconda.org](https://anaconda.org/)
 channel for Linux, Windows and OSX respectively.
 
 To manage the continuous integration and simplify feedstock maintenance
