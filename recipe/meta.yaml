@@ -1,4 +1,4 @@
-{% set version = "0.2-15" %}
+{% set version = "0.2-16" %}
 {% set posix = 'm2-' if win else '' %}
 {% set native = 'm2w64-' if win else '' %}
 
@@ -10,7 +10,7 @@ source:
   url:
     - {{ cran_mirror }}/src/contrib/topicmodels_{{ version }}.tar.gz
     - {{ cran_mirror }}/src/contrib/Archive/topicmodels/topicmodels_{{ version }}.tar.gz
-  sha256: 71b50f78e4d7b95b5c3663d766eb15ad2061cc49d58436dc3aa56960cdaf77d0
+  sha256: 0d5c9c65dd7ba031ba81adc0984d3e36b0309ada2204644bf816370ae656e905
 
 build:
   merge_build_host: true  # [win]
